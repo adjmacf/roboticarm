@@ -89,4 +89,6 @@ gripopen.place(width=100, height=30, x=125, y=265)
 
 PAP.pack()
 PAP.place(height=30, x=25, y=350)
+
+
 top.mainloop()
