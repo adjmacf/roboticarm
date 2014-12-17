@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 # this works when you install espeak (for libs) and the python tts https://pypi.python.org/pypi/pyttsx 
 
+#adjmacf fork: still working on GUI for this one
+
 # metadata
 ' robot arm python control program '
 __version__ = ' 0.1 '
