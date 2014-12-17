@@ -1,5 +1,7 @@
 Python Web based OWI/Maplin Robotic Arm
 ==========
+Very Simple Tk GUI Added instead of website for computers without apache installed
+==========
 
 Buy an OWI or Maplin robotic arm (looks like the one https://github.com/lizquilty/roboticarm/blob/master/usb-robot-arm.png ). Its cheap, around $50USD or so
 
@@ -20,28 +22,4 @@ pyusb http://sourceforge.net/projects/pyusb
  python setup.py install
 ```
 
-
-Edit /etc/udev/rules.d/85-robotarm.rules and add
-```
-SUBSYSTEM=="usb", ATTRS{idVendor}=="1267", ATTRS{idProduct}=="0000", ACTION=="add", GROUP="plugdev", MODE="0666"
-````
-Add apache user to plugdev group
-````
-sudo usermod -aG plugdev www-data
-````
-Configure apache to work with python by adding the following 
-```apache
-      <Directory /home/pi/web/>
-                Options ExecCGI Indexes FollowSymLinks MultiViews
-                AllowOverride All
-                Order allow,deny
-                allow from all
-                AddHandler cgi-script .cgi .py
-        </Directory>
-```
-Change the /home/pi/web for whatever your documentroot is. This just happened to be mine :)
-
-Reboot
-
-upload the contents of this directory, and it should work at http://yourip/armtrol.py
 
