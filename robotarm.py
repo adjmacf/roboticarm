@@ -54,5 +54,58 @@ def OpenGrip(one):
 	RobotArm.ctrl_transfer(0x40, 6, 0x100, 0, [2,0,0], 1000)
 
 def Light():
-	RobotArm.ctrl_transfer(0x40, 6, 0x100, 0, [0,0,1], 1000)
+	Light.lightState = 1 - Light.lightState                    #inverts the light state
+	if Light.lightState:
+		RobotArm.ctrl_transfer(0x40, 6, 0x100, 0, [0,0,1], 1000)
+	else:
+		stopAll(1)
+	
+Light.lightState = 0
+
+def blink():
+	Light()
+	time.sleep(0.5)
+	Light()
+	time.sleep(0.5)
+
+def pickAndPlace():
+	ArmRight()
+	time.sleep(6)
+	stopAll()
+	
+	MiddleDown()
+	time.sleep(3)
+	stopAll()
+	
+	grip()
+	time.sleep(1.4)
+	stopAll()
+	
+	MiddleUp()
+	time.sleep(3.2)
+	stopAll()
+	
+	ArmLeft()
+	time.sleep(9)
+	stopAll()
+	
+	MiddleDown()
+	time.sleep(3)
+	stopAll()
+	
+	OpenGrip()
+	time.sleep(1.4)
+	stopAll()
+	
+	MiddleUp()
+	time.sleep(3.2)
+	stopAll()
+	
+	ArmRight()
+	time.sleep(3)
+	stopAll()
+	
+	blink()
+	blink()
+	blink()
 	
