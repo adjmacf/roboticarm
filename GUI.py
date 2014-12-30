@@ -9,7 +9,7 @@ def completedmsg():
 	
 #add buttons and stuff
 
-PAP = Tkinter.Button(text="pick and place", command = completedmsg) #replace with pick and place routine
+PAP = Tkinter.Button(text="pick and place", command = robotarm.pickAndPlace) #replace with pick and place routine
 
 left = Tkinter.Button(text="left")
 left.bind("<ButtonPress-1>", robotarm.ArmLeft)     #on button press move arm left
