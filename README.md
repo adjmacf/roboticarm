@@ -1,4 +1,4 @@
-Python Web based OWI/Maplin Robotic Arm
+OWI/Maplin Robotic Arm
 ==========
 Very Simple Tk GUI Added instead of website for computers without apache installed
 ==========
@@ -7,9 +7,8 @@ Buy an OWI or Maplin robotic arm (looks like the one https://github.com/lizquilt
 
 Purchase the USB kit to connect it to a PC
 
-Find a child to put it together for you, it will keep them amused for hours :)
 
-Get a Raspberry Pi or other Linux based PC to hook up to it (this is debian/ubuntu specific probably)
+Get Linux based PC to hook up to it (this is debian/ubuntu specific probably)
 
 Set up pyusb
 Install the custom pyUSB
